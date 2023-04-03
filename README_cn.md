@@ -1,4 +1,13 @@
+# 本分支專案摘要
+此分支專案是原專案 Ehentai metadata 插件的繁體中文版
 
+*Note*
+1. 本插件使用的opencc原始碼來自 opencc-python (https://github.com/yichen0831/opencc-python). License: Apache License 2.0
+2. 本插件使用的資料來自 OpenCC (https://github.com/BYVoid/OpenCC). License: Apache License 2.0
+3. Python軟體基金會原始碼 (GPL Compatible)
+4. 本插件使用的部分函式來自 TradSimpChinese (https://github.com/Hopkins1/TradSimpChinese). Licenese: GPL3
+
+- - -
 <img src="/image/telegram.png" width="200" height="200" alt="插件开发"/>
 
 
