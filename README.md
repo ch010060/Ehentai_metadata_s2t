@@ -1,6 +1,16 @@
 [中文版README](README_cn.md)
 <br/>
 
+# Fork Quick Summary
+This fork is Ehentai metadata plugin in Traditional Chinese verison.
+
+*Note*
+1. This plugin incorporates python code from opencc-python (https://github.com/yichen0831/opencc-python). License: Apache License 2.0
+2. This plugin uses data from OpenCC (https://github.com/BYVoid/OpenCC). License: Apache License 2.0
+3. Python Software Foundation code (GPL Compatible)
+4. The plugin also uses python code from TradSimpChinese (https://github.com/Hopkins1/TradSimpChinese). Licenese: GPL3
+
+- - -
 <img src="/image/telegram.png" width="200" height="200" alt="插件开发"/>
 
 
