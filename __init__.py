@@ -21,6 +21,11 @@ from urllib.parse import urlencode
 from PyQt5 import QtCore,QtWidgets,QtGui
 import difflib
 
+from calibre_plugins.ehentai_metadata_s2t.opencc_python.opencc import OpenCC
+
+CONFIG_FILE = 'config'
+DICT_FILE = 'dictionary'
+
 # TODO: fill the LANGUAGE_LIST
 LANGUAGE_DICT = {
     'Chinese'   : 'chinese',
@@ -56,6 +61,14 @@ CALIBRELANGUAGES_DICT={
 '俄语':'俄语'
 }
 
+# Calibre function passed into converter for getting resource files
+def get_resource_file(file_type, file_name):
+    if file_type == CONFIG_FILE:
+        return get_resources('opencc_python/config/' + file_name)
+    elif file_type == DICT_FILE:
+        return get_resources('opencc_python/dictionary/' + file_name)
+    else:
+        raise ValueError('conversion value incorrect')
 
 def getName(list,i):
     try:
@@ -65,11 +78,12 @@ def getName(list,i):
 
 def findName(conn,comment,raw):
     try:
+        cc = OpenCC(get_resource_file,'s2t')
         str = conn.execute(comment).fetchone()[0]
         if ")" in str:
             pattern = re.compile('\)(.*)')
             str = pattern.search(str).group(1)
-        return str
+        return cc.convert(str)
     except:
         return raw
 
